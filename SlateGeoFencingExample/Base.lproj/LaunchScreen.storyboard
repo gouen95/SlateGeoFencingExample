@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_welcome" translatesAutoresizingMaskIntoConstraints="NO" id="Sv0-K9-tfc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slate_rounded" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-sl-3UK">
+                                <rect key="frame" x="94" y="240" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LMB-sl-3UK" secondAttribute="height" multiplier="1:1" id="iys-d1-hQj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LMB-sl-3UK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5WH-TA-VbG"/>
+                            <constraint firstItem="LMB-sl-3UK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fzK-yr-7ei"/>
+                            <constraint firstItem="Sv0-K9-tfc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gZs-FH-mPd"/>
+                            <constraint firstItem="LMB-sl-3UK" firstAttribute="width" secondItem="Sv0-K9-tfc" secondAttribute="width" multiplier="0.5" id="h1c-bb-jsM"/>
+                            <constraint firstAttribute="trailing" secondItem="Sv0-K9-tfc" secondAttribute="trailing" id="jrI-Ru-Ml5"/>
+                            <constraint firstAttribute="bottom" secondItem="Sv0-K9-tfc" secondAttribute="bottom" id="vOX-1K-4MD"/>
+                            <constraint firstItem="Sv0-K9-tfc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zWM-Rc-lsW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_welcome" width="480" height="853.5"/>
+        <image name="slate_rounded" width="133.5" height="133.5"/>
+    </resources>
+</document>

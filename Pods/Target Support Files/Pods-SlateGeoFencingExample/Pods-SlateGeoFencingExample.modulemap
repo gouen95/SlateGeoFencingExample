@@ -1,0 +1,6 @@
+framework module Pods_SlateGeoFencingExample {
+  umbrella header "Pods-SlateGeoFencingExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

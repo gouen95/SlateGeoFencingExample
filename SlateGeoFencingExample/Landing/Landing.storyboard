@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dYQ-oR-mmy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="9bj-gX-9Js">
+            <objects>
+                <viewController id="dYQ-oR-mmy" customClass="LandingViewController" customModule="SlateGeoFencingExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dK0-xb-6aW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_welcome" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-bW-x2S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slate_rounded" translatesAutoresizingMaskIntoConstraints="NO" id="oCi-ys-Zlx">
+                                <rect key="frame" x="94" y="240" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oCi-ys-Zlx" secondAttribute="height" multiplier="1:1" id="ssn-X7-RGE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PO0-Wt-7hv">
+                                <rect key="frame" x="136" y="502.5" width="103" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actAdmin:" destination="dYQ-oR-mmy" eventType="touchUpInside" id="KBO-lM-cLd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="izT-40-M5P">
+                                <rect key="frame" x="136" y="582.5" width="103" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="actConsumer:" destination="dYQ-oR-mmy" eventType="touchUpInside" id="j0z-39-8ZE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PO0-Wt-7hv" firstAttribute="top" secondItem="oCi-ys-Zlx" secondAttribute="bottom" constant="75" id="5e3-Jo-GXc"/>
+                            <constraint firstAttribute="trailing" secondItem="fRC-bW-x2S" secondAttribute="trailing" id="5qd-MZ-6sd"/>
+                            <constraint firstItem="izT-40-M5P" firstAttribute="centerX" secondItem="PO0-Wt-7hv" secondAttribute="centerX" id="NGE-bM-G1L"/>
+                            <constraint firstAttribute="bottom" secondItem="fRC-bW-x2S" secondAttribute="bottom" id="RLJ-a4-hNX"/>
+                            <constraint firstItem="fRC-bW-x2S" firstAttribute="leading" secondItem="dK0-xb-6aW" secondAttribute="leading" id="XCb-fZ-M5X"/>
+                            <constraint firstItem="PO0-Wt-7hv" firstAttribute="centerX" secondItem="oCi-ys-Zlx" secondAttribute="centerX" id="cEf-aU-LAT"/>
+                            <constraint firstItem="fRC-bW-x2S" firstAttribute="top" secondItem="dK0-xb-6aW" secondAttribute="top" id="d83-Iq-Xi9"/>
+                            <constraint firstItem="oCi-ys-Zlx" firstAttribute="width" secondItem="fRC-bW-x2S" secondAttribute="width" multiplier="0.5" id="giq-Mi-qmH"/>
+                            <constraint firstItem="oCi-ys-Zlx" firstAttribute="centerY" secondItem="dK0-xb-6aW" secondAttribute="centerY" identifier="slateLogoCenterY" id="hnz-yk-B46"/>
+                            <constraint firstItem="oCi-ys-Zlx" firstAttribute="width" secondItem="oCi-ys-Zlx" secondAttribute="height" multiplier="1:1" id="pUX-3h-xOx"/>
+                            <constraint firstItem="oCi-ys-Zlx" firstAttribute="centerX" secondItem="dK0-xb-6aW" secondAttribute="centerX" id="qn8-DW-ZT5"/>
+                            <constraint firstItem="izT-40-M5P" firstAttribute="top" secondItem="PO0-Wt-7hv" secondAttribute="bottom" constant="25" id="ref-7S-wmR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Sf-EQ-WVt"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnLoginAsAdmin" destination="PO0-Wt-7hv" id="Tcy-85-epd"/>
+                        <outlet property="btnLoginAsConsumer" destination="izT-40-M5P" id="Gdx-HF-Nvc"/>
+                        <outlet property="ivSlateLogo" destination="oCi-ys-Zlx" id="BGt-3g-1mr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CwZ-hq-9kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="-420"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background_welcome" width="480" height="853.5"/>
+        <image name="slate_rounded" width="133.5" height="133.5"/>
+    </resources>
+</document>

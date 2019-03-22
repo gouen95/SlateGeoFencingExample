@@ -1,0 +1,16 @@
+{
+	"items": [
+
+		{
+			"type" : "assets",
+			"sourcePath": "./image-config-source/assets" ,
+			"destPath" : "./SlateGeoFencingExample/Assets.xcassets"
+		},
+		{
+			"type" : "icon",
+			"sourcePath": "./image-config-source/icon" ,
+			"destPath" : "./SlateGeoFencingExample/Assets.xcassets",
+			"name" : "Icon"
+		}
+	]
+}
