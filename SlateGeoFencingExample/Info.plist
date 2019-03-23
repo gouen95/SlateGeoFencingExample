@@ -39,6 +39,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>In order to acquire location for Geofencing</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceSansPro-Black.ttf</string>

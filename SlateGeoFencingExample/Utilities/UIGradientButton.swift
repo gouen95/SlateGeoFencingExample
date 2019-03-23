@@ -11,13 +11,13 @@ import UIKit
 @IBDesignable class UIGradientButton: UIButton {
     var gradientLayer: CAGradientLayer?
     
-    @IBInspectable var gradientFirstColor: UIColor = UIColor(hex: Constant.COLOR_TITLE_BLUE) {
+    @IBInspectable var gradientFirstColor: UIColor = UIColor(hex: Constant.COLOR_ALT_BLUE) {
         didSet {
             gradientLayer?.colors = [gradientFirstColor.cgColor, grandientSecondColor.cgColor]
         }
     }
     
-    @IBInspectable var grandientSecondColor: UIColor = UIColor(hex: Constant.COLOR_TITLE_LIGHTBLUE) {
+    @IBInspectable var grandientSecondColor: UIColor = UIColor(hex: Constant.COLOR_MAIN_BLUE) {
         didSet {
             gradientLayer?.colors = [gradientFirstColor.cgColor, grandientSecondColor.cgColor]
         }

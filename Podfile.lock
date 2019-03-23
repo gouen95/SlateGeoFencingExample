@@ -4,17 +4,37 @@ PODS:
   - GoogleMaps/Base (3.0.2)
   - GoogleMaps/Maps (3.0.2):
     - GoogleMaps/Base
+  - IQKeyboardManagerSwift (6.2.0)
+  - PINCache (2.3)
+  - ReachabilitySwift (4.3.0)
+  - Result (4.0.1)
+  - Toast-Swift (4.0.1)
 
 DEPENDENCIES:
   - GoogleMaps
+  - IQKeyboardManagerSwift
+  - PINCache
+  - ReachabilitySwift
+  - Result (~> 4.0.0)
+  - Toast-Swift (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
+    - IQKeyboardManagerSwift
+    - PINCache
+    - ReachabilitySwift
+    - Result
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   GoogleMaps: 941cd655e009b4d8e42df19a3d749bc3fccec973
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Result: a6e784bebf48b471d59cddc1adb81f41f678c487
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: 253b1715d1fb33ebc5cc1b982597d14e6520d034
+PODFILE CHECKSUM: 8dabf667a3c4a59054cf1baa25ba770be9a282a8
 
 COCOAPODS: 1.6.0.beta.2

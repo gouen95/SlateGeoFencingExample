@@ -1,8 +1,8 @@
 //
 //  ExtensionUIColor.swift
-//  MCIS
+//  
 //
-//  Created by Kelvin Leong Admin on 20/04/2017.
+//  Created by Brandon Wong Ka Seng on 20/04/2017.
 //  Copyright © 2017 Silverlake Mobility Ecosystem. All rights reserved.
 //
 
@@ -29,7 +29,7 @@ extension UIColor {
             cString.remove(at: cString.startIndex)
         }
         
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             return UIColor.gray
         }
         

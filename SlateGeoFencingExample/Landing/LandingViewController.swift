@@ -21,14 +21,26 @@ class LandingViewController: UIViewController {
     //MARK:- Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setupUI()
         self.animateLogo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.setTransparent()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     //MARK:- IBActions
     @IBAction func actAdmin(_ sender: UIButton) {
+        let mapVC = UIStoryboard(name: Constant.STORYBOARD_MAPVIEW, bundle: Bundle(for: type(of: self))).instantiateInitialViewController() as! MapViewViewController
         
+        self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
     @IBAction func actConsumer(_ sender: UIButton) {
@@ -45,6 +57,18 @@ class LandingViewController: UIViewController {
         
         btnLoginAsAdmin.setTitle(LocalizedConstant.BUTTON_TITIE_ADMIN, for: .normal)
         btnLoginAsConsumer.setTitle(LocalizedConstant.BUTTON_TITIE_CONSUMER, for: .normal)
+        
+        btnLoginAsAdmin.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        btnLoginAsConsumer.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        
+        btnLoginAsAdmin.layer.cornerRadius = btnLoginAsAdmin.frame.height / 2.5
+        btnLoginAsConsumer.layer.cornerRadius = btnLoginAsConsumer.frame.height / 2.5
+        
+        btnLoginAsAdmin.layer.borderWidth = 1.5
+        btnLoginAsConsumer.layer.borderWidth = 1.5
+        
+        btnLoginAsAdmin.layer.borderColor = UIColor.white.cgColor
+        btnLoginAsConsumer.layer.borderColor = UIColor.white.cgColor
     }
     
     private func animateLogo() {

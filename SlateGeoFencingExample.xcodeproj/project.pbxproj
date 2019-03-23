@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AC5304D0E6CF6B21C12CC00A /* Pods_SlateGeoFencingExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11FA8A20C16C0EDA9B018826 /* Pods_SlateGeoFencingExample.framework */; };
+		CD1F95682244E1460043F965 /* WifiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F95672244E1460043F965 /* WifiManager.swift */; };
+		CD1F956F2244EBFA0043F965 /* ExtensionUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F956E2244EBFA0043F965 /* ExtensionUINavigationController.swift */; };
+		CD1F95752244F7290043F965 /* ExtensionUINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F95742244F7290043F965 /* ExtensionUINavigationBar.swift */; };
+		CD1F95772244F8100043F965 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1F95762244F8100043F965 /* MapView.storyboard */; };
+		CD1F95792244F81F0043F965 /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F95782244F81F0043F965 /* MapViewViewController.swift */; };
+		CD1F957B2244F9420043F965 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F957A2244F9420043F965 /* ExtensionUIImage.swift */; };
 		CD8C04802244BB96005701F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C047F2244BB96005701F2 /* AppDelegate.swift */; };
 		CD8C04872244BB97005701F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8C04862244BB97005701F2 /* Assets.xcassets */; };
 		CD8C048A2244BB97005701F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8C04882244BB97005701F2 /* LaunchScreen.storyboard */; };
@@ -30,12 +36,33 @@
 		CD8C04BC2244CF4B005701F2 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD8C04AF2244CF4B005701F2 /* SourceSansPro-Italic.ttf */; };
 		CD8C04BE2244CF72005701F2 /* ExtensionUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C04BD2244CF72005701F2 /* ExtensionUIFont.swift */; };
 		CD8C04C02244D063005701F2 /* LocalizedConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C04BF2244D063005701F2 /* LocalizedConstant.swift */; };
+		CDD2E0F1224519080064D980 /* GeofenceHardcodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0F0224519080064D980 /* GeofenceHardcodedData.swift */; };
+		CDD2E0F3224523C60064D980 /* CustomUserLocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0F2224523C60064D980 /* CustomUserLocationMarker.swift */; };
+		CDD2E0F5224524520064D980 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0F4224524520064D980 /* ExtensionUIColor.swift */; };
+		CDD2E0F922452DED0064D980 /* UIGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0F822452DED0064D980 /* UIGradientButton.swift */; };
+		CDD2E0FB224533D00064D980 /* LocationPayloadBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0FA224533D00064D980 /* LocationPayloadBean.swift */; };
+		CDD2E0FD22454A890064D980 /* CustomPolygonLocationMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E0FC22454A890064D980 /* CustomPolygonLocationMarker.swift */; };
+		CDD2E0FF2245556E0064D980 /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = CDD2E0FE2245556E0064D980 /* GoogleMapStyle.json */; };
+		CDD2E10122455B1B0064D980 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E10022455B1B0064D980 /* NibLoadable.swift */; };
+		CDD2E10322455B4B0064D980 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E10222455B4B0064D980 /* UIView+Autolayout.swift */; };
+		CDD2E105224563A70064D980 /* StorageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E104224563A70064D980 /* StorageTool.swift */; };
+		CDD2E107224602C80064D980 /* MapViewAddRadius.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD2E106224602C80064D980 /* MapViewAddRadius.xib */; };
+		CDD2E109224602EA0064D980 /* MapViewAddRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E108224602EA0064D980 /* MapViewAddRadius.swift */; };
+		CDD2E10B224630BA0064D980 /* MapViewAddPolygon.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD2E10A224630BA0064D980 /* MapViewAddPolygon.xib */; };
+		CDD2E10D224630FB0064D980 /* MapViewAddPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E10C224630FB0064D980 /* MapViewAddPolygon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11FA8A20C16C0EDA9B018826 /* Pods_SlateGeoFencingExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlateGeoFencingExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62112B273115E8B6D3A59E1B /* Pods-SlateGeoFencingExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlateGeoFencingExample.debug.xcconfig"; path = "Target Support Files/Pods-SlateGeoFencingExample/Pods-SlateGeoFencingExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C1BE47F7154EE52479AF2CA7 /* Pods-SlateGeoFencingExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlateGeoFencingExample.release.xcconfig"; path = "Target Support Files/Pods-SlateGeoFencingExample/Pods-SlateGeoFencingExample.release.xcconfig"; sourceTree = "<group>"; };
+		CD1F95672244E1460043F965 /* WifiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiManager.swift; sourceTree = "<group>"; };
+		CD1F956B2244E4C50043F965 /* SlateGeoFencingExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlateGeoFencingExample.entitlements; sourceTree = "<group>"; };
+		CD1F956E2244EBFA0043F965 /* ExtensionUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUINavigationController.swift; sourceTree = "<group>"; };
+		CD1F95742244F7290043F965 /* ExtensionUINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUINavigationBar.swift; sourceTree = "<group>"; };
+		CD1F95762244F8100043F965 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
+		CD1F95782244F81F0043F965 /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
+		CD1F957A2244F9420043F965 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
 		CD8C047C2244BB96005701F2 /* SlateGeoFencingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlateGeoFencingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8C047F2244BB96005701F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8C04862244BB97005701F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +87,20 @@
 		CD8C04AF2244CF4B005701F2 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		CD8C04BD2244CF72005701F2 /* ExtensionUIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIFont.swift; sourceTree = "<group>"; };
 		CD8C04BF2244D063005701F2 /* LocalizedConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedConstant.swift; sourceTree = "<group>"; };
+		CDD2E0F0224519080064D980 /* GeofenceHardcodedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceHardcodedData.swift; sourceTree = "<group>"; };
+		CDD2E0F2224523C60064D980 /* CustomUserLocationMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUserLocationMarker.swift; sourceTree = "<group>"; };
+		CDD2E0F4224524520064D980 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		CDD2E0F822452DED0064D980 /* UIGradientButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGradientButton.swift; sourceTree = "<group>"; };
+		CDD2E0FA224533D00064D980 /* LocationPayloadBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPayloadBean.swift; sourceTree = "<group>"; };
+		CDD2E0FC22454A890064D980 /* CustomPolygonLocationMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPolygonLocationMarker.swift; sourceTree = "<group>"; };
+		CDD2E0FE2245556E0064D980 /* GoogleMapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
+		CDD2E10022455B1B0064D980 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		CDD2E10222455B4B0064D980 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		CDD2E104224563A70064D980 /* StorageTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTool.swift; sourceTree = "<group>"; };
+		CDD2E106224602C80064D980 /* MapViewAddRadius.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewAddRadius.xib; sourceTree = "<group>"; };
+		CDD2E108224602EA0064D980 /* MapViewAddRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewAddRadius.swift; sourceTree = "<group>"; };
+		CDD2E10A224630BA0064D980 /* MapViewAddPolygon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewAddPolygon.xib; sourceTree = "<group>"; };
+		CDD2E10C224630FB0064D980 /* MapViewAddPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewAddPolygon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +132,61 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD1F95652244DECD0043F965 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F95702244ED490043F965 /* MapView */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		CD1F95662244DED70043F965 /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Consumer;
+			sourceTree = "<group>";
+		};
+		CD1F95702244ED490043F965 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				CDD2E0F2224523C60064D980 /* CustomUserLocationMarker.swift */,
+				CDD2E0FC22454A890064D980 /* CustomPolygonLocationMarker.swift */,
+				CD1F95732244EE160043F965 /* Model */,
+				CD1F95722244EE140043F965 /* View */,
+				CD1F95712244EE110043F965 /* Controller */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		CD1F95712244EE110043F965 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F95782244F81F0043F965 /* MapViewViewController.swift */,
+				CDD2E108224602EA0064D980 /* MapViewAddRadius.swift */,
+				CDD2E10C224630FB0064D980 /* MapViewAddPolygon.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CD1F95722244EE140043F965 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD1F95762244F8100043F965 /* MapView.storyboard */,
+				CDD2E106224602C80064D980 /* MapViewAddRadius.xib */,
+				CDD2E10A224630BA0064D980 /* MapViewAddPolygon.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CD1F95732244EE160043F965 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDD2E0FA224533D00064D980 /* LocationPayloadBean.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CD8C04732244BB96005701F2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,11 +208,15 @@
 		CD8C047E2244BB96005701F2 /* SlateGeoFencingExample */ = {
 			isa = PBXGroup;
 			children = (
+				CD1F956B2244E4C50043F965 /* SlateGeoFencingExample.entitlements */,
+				CD1F95662244DED70043F965 /* Consumer */,
+				CD1F95652244DECD0043F965 /* Admin */,
 				CD8C04922244BD90005701F2 /* Landing */,
 				CD8C049E2244C8DF005701F2 /* Extensions */,
 				CD8C049D2244C8D0005701F2 /* Services */,
 				CD8C04962244BFA2005701F2 /* Constant */,
 				CD8C04A12244CF4B005701F2 /* Font */,
+				CDD2E0F622452DDB0064D980 /* Utilities */,
 				CD8C04912244BCDA005701F2 /* SupportingFiles */,
 				CD8C047F2244BB96005701F2 /* AppDelegate.swift */,
 				CD8C04862244BB97005701F2 /* Assets.xcassets */,
@@ -129,6 +229,8 @@
 		CD8C04912244BCDA005701F2 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				CDD2E0FE2245556E0064D980 /* GoogleMapStyle.json */,
+				CDD2E0F0224519080064D980 /* GeofenceHardcodedData.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -178,6 +280,8 @@
 		CD8C049D2244C8D0005701F2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CD1F95672244E1460043F965 /* WifiManager.swift */,
+				CDD2E104224563A70064D980 /* StorageTool.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -185,8 +289,12 @@
 		CD8C049E2244C8DF005701F2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CDD2E0F4224524520064D980 /* ExtensionUIColor.swift */,
 				CD8C04BD2244CF72005701F2 /* ExtensionUIFont.swift */,
 				CD8C049F2244CAD7005701F2 /* ExtensionNSLayoutConstraint.swift */,
+				CD1F956E2244EBFA0043F965 /* ExtensionUINavigationController.swift */,
+				CD1F95742244F7290043F965 /* ExtensionUINavigationBar.swift */,
+				CD1F957A2244F9420043F965 /* ExtensionUIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +327,24 @@
 			path = Source_Sans_Pro;
 			sourceTree = "<group>";
 		};
+		CDD2E0F622452DDB0064D980 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CDD2E10222455B4B0064D980 /* UIView+Autolayout.swift */,
+				CDD2E10022455B1B0064D980 /* NibLoadable.swift */,
+				CDD2E0F722452DE40064D980 /* Designables */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CDD2E0F722452DE40064D980 /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				CDD2E0F822452DED0064D980 /* UIGradientButton.swift */,
+			);
+			name = Designables;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,6 +357,7 @@
 				CD8C04792244BB96005701F2 /* Frameworks */,
 				CD8C047A2244BB96005701F2 /* Resources */,
 				2DFA93ADF603AFBD19C10C1B /* [CP] Copy Pods Resources */,
+				D0CCFB5EFECAE37FBD9DFFBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +380,14 @@
 				TargetAttributes = {
 					CD8C047B2244BB96005701F2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -279,10 +414,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD1F95772244F8100043F965 /* MapView.storyboard in Resources */,
+				CDD2E0FF2245556E0064D980 /* GoogleMapStyle.json in Resources */,
 				CD8C04B82244CF4B005701F2 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				CD8C04B02244CF4B005701F2 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				CDD2E10B224630BA0064D980 /* MapViewAddPolygon.xib in Resources */,
 				CD8C04B72244CF4B005701F2 /* OFL.txt in Resources */,
 				CD8C04B12244CF4B005701F2 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				CDD2E107224602C80064D980 /* MapViewAddRadius.xib in Resources */,
 				CD8C04982244C059005701F2 /* Landing.storyboard in Resources */,
 				CD8C04BB2244CF4B005701F2 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
 				CD8C04B52244CF4B005701F2 /* SourceSansPro-Light.ttf in Resources */,
@@ -345,6 +484,36 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlateGeoFencingExample/Pods-SlateGeoFencingExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D0CCFB5EFECAE37FBD9DFFBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SlateGeoFencingExample/Pods-SlateGeoFencingExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SlateGeoFencingExample/Pods-SlateGeoFencingExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -353,11 +522,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8C04C02244D063005701F2 /* LocalizedConstant.swift in Sources */,
+				CDD2E0FD22454A890064D980 /* CustomPolygonLocationMarker.swift in Sources */,
 				CD8C049A2244C065005701F2 /* LandingViewController.swift in Sources */,
+				CDD2E105224563A70064D980 /* StorageTool.swift in Sources */,
+				CDD2E10122455B1B0064D980 /* NibLoadable.swift in Sources */,
+				CDD2E0F1224519080064D980 /* GeofenceHardcodedData.swift in Sources */,
 				CD8C04BE2244CF72005701F2 /* ExtensionUIFont.swift in Sources */,
 				CD8C04802244BB96005701F2 /* AppDelegate.swift in Sources */,
+				CDD2E10D224630FB0064D980 /* MapViewAddPolygon.swift in Sources */,
+				CDD2E0F5224524520064D980 /* ExtensionUIColor.swift in Sources */,
+				CD1F95792244F81F0043F965 /* MapViewViewController.swift in Sources */,
+				CD1F956F2244EBFA0043F965 /* ExtensionUINavigationController.swift in Sources */,
 				CD8C049C2244C82D005701F2 /* Constant.swift in Sources */,
+				CDD2E10322455B4B0064D980 /* UIView+Autolayout.swift in Sources */,
+				CD1F957B2244F9420043F965 /* ExtensionUIImage.swift in Sources */,
+				CD1F95752244F7290043F965 /* ExtensionUINavigationBar.swift in Sources */,
+				CDD2E0FB224533D00064D980 /* LocationPayloadBean.swift in Sources */,
+				CDD2E0F922452DED0064D980 /* UIGradientButton.swift in Sources */,
+				CDD2E109224602EA0064D980 /* MapViewAddRadius.swift in Sources */,
 				CD8C04A02244CAD7005701F2 /* ExtensionNSLayoutConstraint.swift in Sources */,
+				CD1F95682244E1460043F965 /* WifiManager.swift in Sources */,
+				CDD2E0F3224523C60064D980 /* CustomUserLocationMarker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +681,7 @@
 			baseConfigurationReference = 62112B273115E8B6D3A59E1B /* Pods-SlateGeoFencingExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SlateGeoFencingExample/SlateGeoFencingExample.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 54QNHN89AF;
 				INFOPLIST_FILE = SlateGeoFencingExample/Info.plist;
@@ -506,7 +692,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sifb.SlateGeoFencingExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Generic Dev";
+				PROVISIONING_PROFILE_SPECIFIER = SlateGeoFencingExample_Dev;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -517,6 +703,7 @@
 			baseConfigurationReference = C1BE47F7154EE52479AF2CA7 /* Pods-SlateGeoFencingExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SlateGeoFencingExample/SlateGeoFencingExample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 54QNHN89AF;
@@ -528,7 +715,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sifb.SlateGeoFencingExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Generic Dist";
+				PROVISIONING_PROFILE_SPECIFIER = SlateGeoFencingExample_Dist;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -2,7 +2,7 @@
 //  UIView+Autolayout.swift
 //  try123
 //
-//  Created by "" on 24/12/2018.
+//  Created by Brandon Wong Ka Seng on 24/12/2018.
 //  Copyright © 2018 Silverlake Mobility Ecosystem Sdn Bhd. All rights reserved.
 //
 
@@ -44,9 +44,16 @@ extension UIView {
     func fillToSuperview(bySafeArea: Bool) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        self.anchor(top: bySafeArea ? self.superview?.safeAreaLayoutGuide.topAnchor :self.superview?.topAnchor,
-                    leading: bySafeArea ? self.superview?.safeAreaLayoutGuide.leadingAnchor : self.superview?.leadingAnchor,
-                    bottom: bySafeArea ? self.superview?.safeAreaLayoutGuide.bottomAnchor : self.superview?.bottomAnchor,
-                    trailing: bySafeArea ? self.superview?.safeAreaLayoutGuide.trailingAnchor : self.superview?.trailingAnchor)
+        if #available(iOS 11.0, *) {
+            self.anchor(top: bySafeArea ? self.superview?.safeAreaLayoutGuide.topAnchor :self.superview?.topAnchor,
+                        leading: bySafeArea ? self.superview?.safeAreaLayoutGuide.leadingAnchor : self.superview?.leadingAnchor,
+                        bottom: bySafeArea ? self.superview?.safeAreaLayoutGuide.bottomAnchor : self.superview?.bottomAnchor,
+                        trailing: bySafeArea ? self.superview?.safeAreaLayoutGuide.trailingAnchor : self.superview?.trailingAnchor)
+        } else {
+            self.anchor(top: bySafeArea ? self.superview?.topAnchor :self.superview?.topAnchor,
+                        leading: bySafeArea ? self.superview?.leadingAnchor : self.superview?.leadingAnchor,
+                        bottom: bySafeArea ? self.superview?.bottomAnchor : self.superview?.bottomAnchor,
+                        trailing: bySafeArea ? self.superview?.trailingAnchor : self.superview?.trailingAnchor)
+        }
     }
 }
