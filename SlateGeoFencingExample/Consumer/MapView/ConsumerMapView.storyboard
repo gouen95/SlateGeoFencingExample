@@ -1,7 +1,79 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mQQ-P8-iee">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Consumer Map View View Controller-->
+        <scene sceneID="LOV-oa-c22">
+            <objects>
+                <viewController id="mQQ-P8-iee" customClass="ConsumerMapViewViewController" customModule="SlateGeoFencingExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9M9-lj-IAI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHq-QU-kyB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgu-vW-nEa" userLabel="Vw Connection Status">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-ev-xrM">
+                                        <rect key="frame" x="35" y="16" width="330" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="power_button_outline" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-lp-SHu">
+                                        <rect key="frame" x="10" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="ZhU-qe-Hi4"/>
+                                            <constraint firstAttribute="height" constant="20" id="zVO-15-OvG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5rg-e9-QZR"/>
+                                    <constraint firstItem="JPY-lp-SHu" firstAttribute="centerY" secondItem="LbG-ev-xrM" secondAttribute="centerY" id="GLX-HK-kFp"/>
+                                    <constraint firstItem="LbG-ev-xrM" firstAttribute="centerY" secondItem="Dgu-vW-nEa" secondAttribute="centerY" id="Qbv-bY-ZNm"/>
+                                    <constraint firstItem="JPY-lp-SHu" firstAttribute="leading" secondItem="Dgu-vW-nEa" secondAttribute="leading" constant="10" id="a3f-4J-Dpi"/>
+                                    <constraint firstItem="LbG-ev-xrM" firstAttribute="leading" secondItem="JPY-lp-SHu" secondAttribute="trailing" constant="5" id="fki-Zz-Vbw"/>
+                                    <constraint firstAttribute="trailing" secondItem="LbG-ev-xrM" secondAttribute="trailing" constant="10" id="vTL-kd-OYA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FEN-ao-95G" firstAttribute="trailing" secondItem="Dgu-vW-nEa" secondAttribute="trailing" id="3CC-HB-7On"/>
+                            <constraint firstItem="OHq-QU-kyB" firstAttribute="leading" secondItem="FEN-ao-95G" secondAttribute="leading" id="9VK-35-Yee"/>
+                            <constraint firstItem="FEN-ao-95G" firstAttribute="trailing" secondItem="OHq-QU-kyB" secondAttribute="trailing" id="A9d-2b-6UV"/>
+                            <constraint firstItem="Dgu-vW-nEa" firstAttribute="top" secondItem="OHq-QU-kyB" secondAttribute="bottom" id="JSV-LZ-oS9"/>
+                            <constraint firstItem="Dgu-vW-nEa" firstAttribute="bottom" secondItem="FEN-ao-95G" secondAttribute="bottom" id="U0G-3c-vV0"/>
+                            <constraint firstItem="OHq-QU-kyB" firstAttribute="top" secondItem="FEN-ao-95G" secondAttribute="top" id="mDw-iK-mWp"/>
+                            <constraint firstItem="Dgu-vW-nEa" firstAttribute="leading" secondItem="FEN-ao-95G" secondAttribute="leading" id="vM2-Nk-Gn2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FEN-ao-95G"/>
+                    </view>
+                    <connections>
+                        <outlet property="ivConnectionStatus" destination="JPY-lp-SHu" id="Lev-cW-ELl"/>
+                        <outlet property="lblConnectionStatus" destination="LbG-ev-xrM" id="vh7-o3-SYE"/>
+                        <outlet property="vwGoogleMapContainer" destination="OHq-QU-kyB" id="f8a-5j-ig0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSw-tV-zNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296.80000000000001" y="-280.20989505247377"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="power_button_outline" width="512" height="512"/>
+    </resources>
 </document>

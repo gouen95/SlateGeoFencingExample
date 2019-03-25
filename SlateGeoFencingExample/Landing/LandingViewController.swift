@@ -38,13 +38,15 @@ class LandingViewController: UIViewController {
     
     //MARK:- IBActions
     @IBAction func actAdmin(_ sender: UIButton) {
-        let mapVC = UIStoryboard(name: Constant.STORYBOARD_MAPVIEW, bundle: Bundle(for: type(of: self))).instantiateInitialViewController() as! MapViewViewController
+        let mapVC = UIStoryboard(name: Constant.STORYBOARD_ADMIN_MAPVIEW, bundle: Bundle(for: type(of: self))).instantiateInitialViewController() as! AdminMapViewViewController
         
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
     @IBAction func actConsumer(_ sender: UIButton) {
+        let mapVC = UIStoryboard(name: Constant.STORYBOARD_CONSUMER_MAPVIEW, bundle: Bundle(for: type(of: self))).instantiateInitialViewController() as! ConsumerMapViewViewController
         
+        self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
     //MARK:- Private functions

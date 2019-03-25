@@ -49,7 +49,11 @@ class WifiManager: NSObject {
     
     //MARK:- Variable
     var reachability: Reachability!
+    
     private(set) var currentWifiInfo: WifiInfo?
+    var isConnectedToWifi: Bool = false
+    
+    var listenToUpdateWifiInfo: (()->())?
     
     private override init() {
         super.init()
@@ -69,14 +73,22 @@ class WifiManager: NSObject {
     private func registerListener() {
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
+                self.isConnectedToWifi = true
                 self.currentWifiInfo = self.getWifiInfo()
             } else {
+                self.isConnectedToWifi = false
                 self.currentWifiInfo = nil
             }
+            
+            self.listenToUpdateWifiInfo?()
         }
         
         reachability.whenUnreachable = { _ in
+            self.isConnectedToWifi = false
             self.currentWifiInfo = nil
+            
+            
+            self.listenToUpdateWifiInfo?()
         }
         
         do {

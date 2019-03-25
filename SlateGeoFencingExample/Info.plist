@@ -38,6 +38,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>In order to acquire location of current position</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>In order to acquire location for Geofencing</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>

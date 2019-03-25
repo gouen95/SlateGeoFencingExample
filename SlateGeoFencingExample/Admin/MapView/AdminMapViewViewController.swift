@@ -1,5 +1,5 @@
 //
-//  MapViewViewController.swift
+//  AdminMapViewViewController.swift
 //  SlateGeoFencingExample
 //
 //  Created by BrandonWong on 22/03/2019.
@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import Toast_Swift
 
-class MapViewViewController: UIViewController {
+class AdminMapViewViewController: UIViewController {
 
     //MARK:-
     enum EditingState {
@@ -29,7 +29,6 @@ class MapViewViewController: UIViewController {
     @IBOutlet weak var vwGoogleMapContainer: UIView!
     
     //MARK:- Variables
-    fileprivate let cameraZoom: Float = 15
     var locationPayloadBean: LocationPayloadBean?
     var editingState = EditingState.none
     
@@ -460,7 +459,7 @@ class MapViewViewController: UIViewController {
     }
 }
 
-extension MapViewViewController: GMSMapViewDelegate {
+extension AdminMapViewViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if editingState == .none {
             editingExistingMarker = marker
@@ -504,7 +503,7 @@ extension MapViewViewController: GMSMapViewDelegate {
 }
 
 //MARK:- LocationManagerDelegate
-extension MapViewViewController: CLLocationManagerDelegate {
+extension AdminMapViewViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.userCurrentLocation = locations.last
         
@@ -523,13 +522,13 @@ extension MapViewViewController: CLLocationManagerDelegate {
     }
 }
 
-extension MapViewViewController: UIGestureRecognizerDelegate {
+extension AdminMapViewViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-extension MapViewViewController: MapViewAddRadiusDelegate {
+extension AdminMapViewViewController: MapViewAddRadiusDelegate {
     func addRadius(view: MapViewAddRadius, didPressOnSave: UIButton) {
         if view.txtTitle.text == nil || (view.txtTitle.text?.count)! < 1 {
             self.view.makeToast(LocalizedConstant.MSG_FILL_IN_TITLE)
@@ -598,7 +597,7 @@ extension MapViewViewController: MapViewAddRadiusDelegate {
     }
 }
 
-extension MapViewViewController: MapViewAddPolygonDelegate {
+extension AdminMapViewViewController: MapViewAddPolygonDelegate {
     func addPolygon(view: MapViewAddPolygon, didPressOnSave: UIButton) {
         if view.txtTitle.text == nil || (view.txtTitle.text?.count)! < 1 {
             self.view.makeToast(LocalizedConstant.MSG_FILL_IN_TITLE)
