@@ -1,8 +1,9 @@
 # SlateGeoFencingExample (installation)
 
-1. In order to debug and run the application an AppID with Access WiFi Information capability is required, create a provisioning profile for it or just tick automatically codesign it.
-2. Run 'pod install' in project directory using Terminal. (Requires Cocoapod dependency manager to use) 
-3. Enable Always GPS location in order to fully utilize Consumer module.
+1. Download project as ZIP or run 'git clone --depth=1 https://github.com/gouen95/SlateGeoFencingExample.git' in terminal.
+2. cd SlateGeoFencingExample and run 'pod install' in project directory using Terminal. (Requires Cocoapod dependency manager to use) .
+3. In order to debug and run the application an AppID with Access WiFi Information capability is required, create a    provisioning profile for it or just tick automatically codesign it.
+4. Enable Always GPS location in order to fully utilize Consumer module.
 
 # How To Use?
 
