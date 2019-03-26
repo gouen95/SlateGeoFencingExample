@@ -39,6 +39,17 @@ class MasterMapViewViewController: UIViewController {
         self.getCurrentLocation()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.locationManager.stopUpdatingLocation()
+        
+        for eachMonitoredRegion in self.locationManager.monitoredRegions {
+            self.locationManager.stopMonitoring(for: eachMonitoredRegion)
+        }
+    }
+    
+    //MARK:- Private functions
     internal func getCurrentLocation() {
         self.locationManager.requestAlwaysAuthorization()
         

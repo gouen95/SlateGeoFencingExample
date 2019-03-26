@@ -76,12 +76,6 @@ class AdminMapViewViewController: MasterMapViewViewController {
         self.navigationController?.navigationBar.setMainThemeWith(alpha: 1.00)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        self.locationManager.stopUpdatingLocation()
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

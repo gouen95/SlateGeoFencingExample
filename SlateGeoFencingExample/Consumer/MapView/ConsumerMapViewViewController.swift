@@ -56,8 +56,6 @@ class ConsumerMapViewViewController: MasterMapViewViewController {
         super.viewDidDisappear(animated)
         
         WifiManager.sharedInstance.listenToUpdateWifiInfo = nil
-        
-        self.locationManager.stopUpdatingLocation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
