@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewAddRadius" customModule="SlateGeoFencingExample" customModuleProvider="target">
             <connections>
+                <outlet property="btnDelete" destination="kms-Fx-Xx2" id="HNC-vc-5RQ"/>
                 <outlet property="lblRadiusM" destination="bbV-bh-JY4" id="Iqq-kT-HqJ"/>
                 <outlet property="slider" destination="9f7-rS-hIp" id="1oK-ae-l8N"/>
                 <outlet property="txtBSSID" destination="dsz-Ol-DbS" id="AaY-7R-1Pl"/>
@@ -143,17 +144,27 @@
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up9-Gq-USx">
-                    <rect key="frame" x="70" y="228" width="48" height="30"/>
+                    <rect key="frame" x="70" y="228" width="48" height="34"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                     <state key="normal" title="Cancel"/>
                     <connections>
                         <action selector="actCancel:" destination="-1" eventType="touchUpInside" id="696-jM-z8k"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac4-ho-RZO">
-                    <rect key="frame" x="264.5" y="228" width="34" height="30"/>
+                    <rect key="frame" x="264.5" y="228" width="34" height="34"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                     <state key="normal" title="Save"/>
                     <connections>
                         <action selector="actSave:" destination="-1" eventType="touchUpInside" id="B2D-jj-2aS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kms-Fx-Xx2">
+                    <rect key="frame" x="164.5" y="228" width="46" height="34"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
+                    <state key="normal" title="Delete"/>
+                    <connections>
+                        <action selector="actDelete:" destination="-1" eventType="touchUpInside" id="CZL-nI-fid"/>
                     </connections>
                 </button>
             </subviews>
@@ -170,6 +181,8 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lmz-f2-88H" secondAttribute="trailing" constant="6" id="RaZ-F4-Xxk"/>
                 <constraint firstItem="ac4-ho-RZO" firstAttribute="top" secondItem="8hp-ru-gIw" secondAttribute="bottom" constant="7.5" id="SfW-Kq-IWV"/>
                 <constraint firstItem="zx8-Oo-qLn" firstAttribute="top" secondItem="Uo2-9g-cTQ" secondAttribute="bottom" constant="15" id="Th8-Lr-3Vi"/>
+                <constraint firstItem="kms-Fx-Xx2" firstAttribute="top" secondItem="8hp-ru-gIw" secondAttribute="bottom" constant="7.5" id="ZEf-0X-bCf"/>
+                <constraint firstItem="kms-Fx-Xx2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Zn1-hH-yIL"/>
                 <constraint firstItem="Uo2-9g-cTQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="a2b-gw-vUn"/>
                 <constraint firstItem="Up9-Gq-USx" firstAttribute="top" secondItem="8hp-ru-gIw" secondAttribute="bottom" constant="7.5" id="bcX-x8-WPU"/>
                 <constraint firstItem="Uo2-9g-cTQ" firstAttribute="top" secondItem="geH-CU-Fuo" secondAttribute="bottom" constant="15" id="coA-SM-dgm"/>

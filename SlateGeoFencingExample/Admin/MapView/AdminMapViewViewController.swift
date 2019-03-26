@@ -192,7 +192,9 @@ class AdminMapViewViewController: MasterMapViewViewController {
         }
     }
     
-    private func addShowRadiusConfigurationScreen() {
+    private func addShowRadiusConfigurationScreen(isEditing bool: Bool) {
+        self.vwAddRadius.shouldHideDeleteButton(!bool)
+        
         if self.vwAddRadius.superview == nil {
             self.view.addSubview(self.vwAddRadius)
             
@@ -302,7 +304,7 @@ class AdminMapViewViewController: MasterMapViewViewController {
             self.gmsMapView.animate(toLocation: touchPointCoordinate)
             
             //Add/Show configuration screen
-            self.addShowRadiusConfigurationScreen()
+            self.addShowRadiusConfigurationScreen(isEditing: false)
             
             self.vwAddRadius.locationPointList = payloadBean.locPointListBean[0]
             self.vwAddRadius.txtSSID.text = payloadBean.locPointListBean[0].locationWifiInfo?.ssid
@@ -364,7 +366,7 @@ class AdminMapViewViewController: MasterMapViewViewController {
         btnAddPolygon.isHidden = bool
     }
     
-    private func resetMarkers() {
+    private func removeAllMarkers() {
         for eachMarker in geofenceMarkers {
             eachMarker.map = nil
         }
@@ -382,8 +384,8 @@ extension AdminMapViewViewController: GMSMapViewDelegate {
                 if locationPointList?.shapeFlagString == "R" {
                     editingState = .existingRadius
                     
-                    self.addShowRadiusConfigurationScreen()
-                    self.vwAddRadius.tag = index
+                    self.addShowRadiusConfigurationScreen(isEditing: true)
+                    self.vwAddRadius.tag = index //Set index to tag to identify locPointListBean[] while editing
                     
                     self.vwAddRadius.locationPointList = locationPointList
                     
@@ -398,7 +400,7 @@ extension AdminMapViewViewController: GMSMapViewDelegate {
                     editingState = .existingPolygon
                     
                     self.addShowPolygonConfigurationScreen()
-                    self.vwAddPolygon.tag = index
+                    self.vwAddPolygon.tag = index //Set index to tag to identify locPointListBean[] while editing
                     
                     self.vwAddPolygon.locationPointList = locationPointList
                     
@@ -454,7 +456,7 @@ extension AdminMapViewViewController: MapViewAddRadiusDelegate {
         }
         
         if self.locationPayloadBean != nil && view.locationPointList != nil {
-            self.resetMarkers()
+            self.removeAllMarkers()
             
             if editingState != .existingRadius {
                 self.locationPayloadBean!.locPointListBean.append(view.locationPointList!)
@@ -508,6 +510,34 @@ extension AdminMapViewViewController: MapViewAddRadiusDelegate {
             }
         }
     }
+    
+    func addRadius(view: MapViewAddRadius, didPressOnDelete: UIButton) {
+        UIView.animate(withDuration: 0.35) {
+            self.vwAddRadius.transform = .identity
+        }
+        
+        self.hideButtons(bool: false)
+        
+        for (index, eachMarker) in geofenceMarkers.enumerated() {
+            if eachMarker == editingExistingMarker {
+                eachMarker.map = nil
+                geofenceMarkers.remove(at: index)
+                
+                break;
+            }
+        }
+        
+        if self.locationPayloadBean != nil && view.locationPointList != nil {
+            self.locationPayloadBean!.locPointListBean.remove(at: view.tag)
+            
+            let encodedObject = try? JSONEncoder().encode(self.locationPayloadBean!)
+            UserDefaults.standard.set(String(data: encodedObject!, encoding: .utf8), forKey: String(describing: type(of: LocationPayloadBean.self)))
+            
+            view.clearAllLabel()
+        }
+        
+        editingState = .none
+    }
 }
 
 extension AdminMapViewViewController: MapViewAddPolygonDelegate {
@@ -532,7 +562,7 @@ extension AdminMapViewViewController: MapViewAddPolygonDelegate {
         self.editingPolygonPaths = nil
         
         if self.locationPayloadBean != nil && view.locationPointList != nil {
-            self.resetMarkers()
+            self.removeAllMarkers()
             
             if editingState != .existingPolygon {
                 self.locationPayloadBean!.locPointListBean.append(view.locationPointList!)

@@ -12,6 +12,7 @@ protocol MapViewAddRadiusDelegate {
     func addRadius(view: MapViewAddRadius, didPressOnSave: UIButton)
     func addRadius(view: MapViewAddRadius, didPressOnCancel: UIButton)
     func addRadius(view: MapViewAddRadius, sliderDidChanged value: Float)
+    func addRadius(view: MapViewAddRadius, didPressOnDelete: UIButton)
 }
 
 class MapViewAddRadius: UIView, NibLoadable {
@@ -24,6 +25,7 @@ class MapViewAddRadius: UIView, NibLoadable {
     @IBOutlet weak var txtSSID: UITextField!
     @IBOutlet weak var txtBSSID: UITextField!
     @IBOutlet weak var txtSSIDDATA: UITextField!
+    @IBOutlet weak var btnDelete: UIButton!
     
     //MARK:- Variables
     var delegate: MapViewAddRadiusDelegate?
@@ -64,6 +66,11 @@ class MapViewAddRadius: UIView, NibLoadable {
         txtSSIDDATA.text = nil
     }
     
+    func shouldHideDeleteButton(_ bool: Bool) {
+        self.btnDelete.isHidden = bool
+        self.btnDelete.isUserInteractionEnabled = !bool
+    }
+    
     //MARK:- IBActions
     @IBAction func actSave(_ sender: UIButton) {
         locationPointList?.locName = self.txtTitle.text ?? ""
@@ -83,5 +90,8 @@ class MapViewAddRadius: UIView, NibLoadable {
         lblRadiusM.text = "\(String(format: "%.0f", sender.value * 1000))m"
         
         locationPointList?.radius = Float(String(format: "%.0f", sender.value * 1000))!
+    }
+    @IBAction func actDelete(_ sender: UIButton) {
+        delegate?.addRadius(view: self, didPressOnDelete: sender)
     }
 }
