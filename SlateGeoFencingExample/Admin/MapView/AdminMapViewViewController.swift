@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import Toast_Swift
 
-class AdminMapViewViewController: UIViewController {
+class AdminMapViewViewController: MasterMapViewViewController {
 
     //MARK:-
     enum EditingState {
@@ -33,22 +33,6 @@ class AdminMapViewViewController: UIViewController {
     var editingState = EditingState.none
     
     var editingExistingMarker: GMSMarker?
-    
-    var gmsMapView: GMSMapView = {
-        let mapView = GMSMapView()
-        return mapView
-    }()
-    var userLocationMarker: CustomUserLocationMarker = {
-        let marker = CustomUserLocationMarker()
-        return marker
-    }()
-    var geofenceMarkers: [GMSMarker] = []
-    
-    var locationManager: CLLocationManager = {
-        return CLLocationManager()
-    }()
-    var userCurrentLocation: CLLocation?
-    var isFirstTimeGettingUserLocation: Bool = true
     
     let btnAddRadius: UIGradientButton = {
         let button = UIGradientButton()
@@ -82,7 +66,7 @@ class AdminMapViewViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupUI()
-        self.setupMap()
+        
         self.setupDataAndDrawMap()
     }
     
@@ -90,16 +74,44 @@ class AdminMapViewViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.setMainThemeWith(alpha: 1.00)
-        
-        self.getCurrentLocation()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.locationManager.stopUpdatingLocation()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    //MARK:- Override functions
+    internal override func setupMap() {
+        super.setupMap()
+        
+        super.gmsMapView.delegate = self
+        
+        self.vwGoogleMapContainer.addSubview(gmsMapView)
+        self.gmsMapView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.gmsMapView.topAnchor.constraint(equalTo: self.vwGoogleMapContainer.topAnchor),
+            self.gmsMapView.leadingAnchor.constraint(equalTo: self.vwGoogleMapContainer.leadingAnchor),
+            self.gmsMapView.bottomAnchor.constraint(equalTo: self.vwGoogleMapContainer.bottomAnchor),
+            self.gmsMapView.trailingAnchor.constraint(equalTo: self.vwGoogleMapContainer.trailingAnchor)
+            ])
+        
+        //Setup LongPressGesture
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(sender:)))
+        longGesture.minimumPressDuration = 0.75
+        longGesture.delegate = self
+        self.gmsMapView.addGestureRecognizer(longGesture)
+    }
+    
+    internal override func getCurrentLocation() {
+        super.getCurrentLocation()
+        
+        self.locationManager.delegate = self
     }
     
     //MARK:- Private functions
@@ -138,41 +150,6 @@ class AdminMapViewViewController: UIViewController {
         btnAddRadius.addTarget(self, action: #selector(self.actAddRadius(sender:)), for: .touchUpInside)
     }
     
-    private func setupMap() {
-        self.gmsMapView.delegate = self
-        
-        do {
-            if let styleURL = Bundle.main.url(forResource: "GoogleMapStyle", withExtension: "json") {
-                gmsMapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
-            } else {
-                print("Unable to GoogleMapStyle style.json")
-            }
-        } catch {
-            print("One or more of the map styles failed to load. \(error)")
-        }
-        
-        self.vwGoogleMapContainer.addSubview(gmsMapView)
-        self.gmsMapView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.gmsMapView.topAnchor.constraint(equalTo: self.vwGoogleMapContainer.topAnchor),
-            self.gmsMapView.leadingAnchor.constraint(equalTo: self.vwGoogleMapContainer.leadingAnchor),
-            self.gmsMapView.bottomAnchor.constraint(equalTo: self.vwGoogleMapContainer.bottomAnchor),
-            self.gmsMapView.trailingAnchor.constraint(equalTo: self.vwGoogleMapContainer.trailingAnchor)
-        ])
-        
-        self.userLocationMarker.map = gmsMapView
-        self.userLocationMarker.radarMeter = 15
-        let ivMarkerIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        ivMarkerIcon.image = UIImage(named: Constant.IMG_ICON_LOCATION)
-        userLocationMarker.iconView = ivMarkerIcon
-        
-        //Setup LongPressGesture
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(sender:)))
-        longGesture.minimumPressDuration = 0.75
-        longGesture.delegate = self
-        self.gmsMapView.addGestureRecognizer(longGesture)
-    }
-    
     private func setupDataAndDrawMap() {
         StorageTool.loadLocationPayloadBean { (result) in
             switch result {
@@ -193,64 +170,6 @@ class AdminMapViewViewController: UIViewController {
         if self.locationPayloadBean != nil {
             self.clearMap()
             self.addMarker(bean: self.locationPayloadBean!)
-        }
-    }
-    
-    private func getCurrentLocation() {
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-    }
-    
-    @objc private func actCenterLocation(sender: UIBarButtonItem) {
-        if let userCurrentLocation = userCurrentLocation {
-            let camera = GMSCameraPosition.camera(withLatitude: userCurrentLocation.coordinate.latitude, longitude: userCurrentLocation.coordinate.longitude, zoom: cameraZoom)
-            self.gmsMapView.animate(to: camera)
-        }
-    }
-    
-    private func clearMap() {
-        if geofenceMarkers.count > 0 {
-            for eachMarker in geofenceMarkers {
-                eachMarker.map = nil
-            }
-        }
-    }
-    
-    private func addMarker(bean: LocationPayloadBean) {
-        for (index, eachList) in bean.locPointListBean.enumerated() {
-            if eachList.shapeFlagString == "R" {
-                let customMarker = CustomUserLocationMarker(radius: eachList.radius, latitude: eachList.latitude, longitude:  eachList.longitude)
-                let ivMarkerIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-                ivMarkerIcon.image = UIImage(named: Constant.IMG_ICON_PIN)
-                customMarker.iconView = ivMarkerIcon
-                customMarker.title = eachList.locName
-                customMarker.map = self.gmsMapView
-                
-                customMarker.userData = index
-                
-                geofenceMarkers.append(customMarker)
-            } else {
-                let gmsMarker = CustomPolygonLocationMarker(position: CLLocationCoordinate2D(latitude: Double(eachList.latitude), longitude: Double(eachList.longitude)))
-                let ivMarkerIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-                ivMarkerIcon.image = UIImage(named: Constant.IMG_ICON_PIN)
-                gmsMarker.iconView = ivMarkerIcon
-                gmsMarker.title = eachList.locName
-                gmsMarker.map = self.gmsMapView
-                
-                let mutablePath = GMSMutablePath()
-                if let polygonPoints = eachList.polygonLocPoint {
-                    for eachPolygonPoint in polygonPoints {
-                        mutablePath.add(CLLocationCoordinate2D(latitude: Double(eachPolygonPoint.latitude), longitude: Double(eachPolygonPoint.longitude)))
-                    }
-                }
-                gmsMarker.path = mutablePath
-                
-                gmsMarker.userData = index
-                
-                geofenceMarkers.append(gmsMarker)
-            }
         }
     }
 

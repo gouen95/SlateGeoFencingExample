@@ -14,6 +14,7 @@
 		CD1F95772244F8100043F965 /* AdminMapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD1F95762244F8100043F965 /* AdminMapView.storyboard */; };
 		CD1F95792244F81F0043F965 /* AdminMapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F95782244F81F0043F965 /* AdminMapViewViewController.swift */; };
 		CD1F957B2244F9420043F965 /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1F957A2244F9420043F965 /* ExtensionUIImage.swift */; };
+		CD4E903F2249DCA9001DBF8C /* MasterMapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E903E2249DCA9001DBF8C /* MasterMapViewViewController.swift */; };
 		CD8C04802244BB96005701F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8C047F2244BB96005701F2 /* AppDelegate.swift */; };
 		CD8C04872244BB97005701F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8C04862244BB97005701F2 /* Assets.xcassets */; };
 		CD8C048A2244BB97005701F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD8C04882244BB97005701F2 /* LaunchScreen.storyboard */; };
@@ -65,6 +66,7 @@
 		CD1F95762244F8100043F965 /* AdminMapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminMapView.storyboard; sourceTree = "<group>"; };
 		CD1F95782244F81F0043F965 /* AdminMapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMapViewViewController.swift; sourceTree = "<group>"; };
 		CD1F957A2244F9420043F965 /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
+		CD4E903E2249DCA9001DBF8C /* MasterMapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMapViewViewController.swift; sourceTree = "<group>"; };
 		CD8C047C2244BB96005701F2 /* SlateGeoFencingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlateGeoFencingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8C047F2244BB96005701F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD8C04862244BB97005701F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		CD4E903D2249DC8E001DBF8C /* MasterMapView */ = {
+			isa = PBXGroup;
+			children = (
+				CD4E903E2249DCA9001DBF8C /* MasterMapViewViewController.swift */,
+			);
+			path = MasterMapView;
+			sourceTree = "<group>";
+		};
 		CD8C04732244BB96005701F2 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				CD1F956B2244E4C50043F965 /* SlateGeoFencingExample.entitlements */,
+				CD4E903D2249DC8E001DBF8C /* MasterMapView */,
 				CD1F95662244DED70043F965 /* Consumer */,
 				CD1F95652244DECD0043F965 /* Admin */,
 				CD8C04922244BD90005701F2 /* Landing */,
@@ -568,6 +579,7 @@
 				CDD2E10122455B1B0064D980 /* NibLoadable.swift in Sources */,
 				CDD2E0F1224519080064D980 /* GeofenceHardcodedData.swift in Sources */,
 				CD8C04BE2244CF72005701F2 /* ExtensionUIFont.swift in Sources */,
+				CD4E903F2249DCA9001DBF8C /* MasterMapViewViewController.swift in Sources */,
 				CD8C04802244BB96005701F2 /* AppDelegate.swift in Sources */,
 				CDD2E10D224630FB0064D980 /* Admin+MapViewAddPolygon.swift in Sources */,
 				CDD2E0F5224524520064D980 /* ExtensionUIColor.swift in Sources */,
